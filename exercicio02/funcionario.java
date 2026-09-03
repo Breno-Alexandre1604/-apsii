@@ -1,21 +1,35 @@
 package exercicio02;
 
-public class funcionario {
-    String nome;
-    double salarioBase;
-    int dataAdmissao;
+public class Funcionario {
+    private static final double PERCENTUAL_DESCONTO = 0.08;
 
-    public funcionario(String nome, double salarioBase, int dataAdmissao) {
+    private final String nome;
+    private final double salarioBase;
+    private final int dataAdmissao;
+
+    public Funcionario(String nome, double salarioBase, int dataAdmissao) {
         this.nome = nome;
         this.salarioBase = salarioBase;
         this.dataAdmissao = dataAdmissao;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public double getSalarioBase() {
+        return salarioBase;
+    }
+
+    public int getDataAdmissao() {
+        return dataAdmissao;
+    }
+
     public double calcularDesconto() {
-        return salarioBase * 0.08 ; // 8%Exemplo de cálculo de desconto de 10%
+        return salarioBase * PERCENTUAL_DESCONTO;
     }
 
     public double calcularSalario() {
-        
-        return salarioBase - calcularDesconto() ; // Exemplo de cálculo de salário com aumento de 10%
+        return salarioBase - calcularDesconto();
     }
 }
